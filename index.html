@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Your World, Your Life · 人生シミュレーション</title>
+<meta name="description" content="Your World, Your Life。いま地球で生まれる赤ちゃんのひとりとして、くじで生まれ、公開統計のなかで一生を最後まで送る無料の人生シミュレーション。">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:site_name" content="Your World, Your Life">
+<meta property="og:title" content="Your World, Your Life｜どこに生まれ、どんな一生を送る？">
+<meta property="og:description" content="生まれる国は、くじで決まる。世界の統計をもとに、一人の人生を最後までたどります。">
+<meta property="og:url" content="https://rashiandlau.github.io/your-world-your-life/">
+<meta property="og:image" content="https://rashiandlau.github.io/your-world-your-life/assets/og-ja.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="夜空と山並みを描いたドット絵。Your World, Your Life の文字。">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Your World, Your Life｜どこに生まれ、どんな一生を送る？">
+<meta name="twitter:description" content="生まれる国は、くじで決まる。世界の統計をもとに、一人の人生を最後までたどります。">
+<meta name="twitter:image" content="https://rashiandlau.github.io/your-world-your-life/assets/og-ja.png">
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="assets/style.css?v=9f0c4a1d91">
+<script src="assets/theme.js?v=9f0c4a1d91"></script>
+</head>
+<body>
+<main id="app">
+
+<!-- ========== 最初の画面 ========== -->
+<div id="home" class="home">
+  <div class="topbar">
+    <div class="langpill" aria-label="言語">
+      <span class="globe" aria-hidden="true">◍</span>
+      <a href="en/index.html">English</a><span title="準備中">한국어</span><span class="on" aria-current="true">日本語</span><span title="準備中">繁體中文</span><span title="準備中">简体中文</span><span title="準備中">Tiếng Việt</span><span title="準備中">Français</span><span title="準備中">ไทย</span><span title="準備中">Español</span><span title="準備中">Deutsch</span>
+      <button class="theme" data-theme-toggle aria-label="表示テーマを切り替える">◑</button>
+    </div>
+  </div>
+
+  <div class="hero">
+    <div>
+      <h1 class="title">Your World,<br>Your <b>Life</b></h1>
+      <p class="intro">Your World, Your Life（ユア・ワールド、ユア・ライフ）では、地球でいま生まれる赤ちゃんのひとりとして、たった一度の一生を終わりまで見届けます。地球では1秒に4人ほどの赤ちゃんが生まれています。どの国の、どんな家に生まれるかは選べません。あなた自身がそうだったように。</p>
+      <div class="edu-notice" id="eduNotice" hidden>
+        <b>授業用の画面です</b>
+        <p>いまの世界だけを扱い、お酒・たばこ・賭け事・犯罪を選ぶ場面と、暴力的な表現を除いています。貧困、病気、幼い子どもの死、児童婚、紛争は統計に関わる出来事として起こる場合があります。入力や結果はどこにも送られません。</p>
+        <button class="btn btn-sm" data-open="teacher">先生へ</button>
+        <a href="index.html">通常の画面へ</a>
+      </div>
+      <div class="counters">
+        <div><div class="n" id="cBorn">0</div><div class="t">このページを開いてから生まれた赤ちゃん</div></div>
+        <div><div class="n" id="cDied">0</div><div class="t">同じあいだに亡くなった人</div></div>
+      </div>
+      <div class="theme-badge"><span class="b">今日のテーマ</span><b id="themeName"></b><span id="themeDesc"></span></div>
+      <div class="live"><span class="dot" aria-hidden="true"></span><div><div>いま、地球ではおよそ81億人が、それぞれの一生のさなかにいます。</div><div class="just" id="justBorn">たった今 · 誰かが生まれました</div></div></div>
+      <div class="mobile-born"><button class="btn btn-primary btn-big" data-born>生まれる</button></div>
+      <div class="how-strip how-strip-mobile" aria-label="あそびかた"><b>あそびかた</b><span><i class="how-icon how-born" aria-hidden="true"></i>生まれる</span><span class="how-arrow" aria-hidden="true">→</span><span><i class="how-icon how-focus" aria-hidden="true"></i>毎年の重点と決断</span><span class="how-arrow" aria-hidden="true">→</span><span><i class="how-icon how-record" aria-hidden="true"></i>一生をふりかえる</span></div>
+      <div class="mini-mem edu-hide">
+        <div class="labelrow"><span>見本の一生（このサイトが自動でつくった例）</span><button class="btn btn-sm btn-ghost" data-open="memorials">すべて見る</button></div>
+        <div class="row" id="miniMem"></div>
+      </div>
+    </div>
+    <div>
+      <div class="mapbox" id="heroMap"></div>
+      <div class="birthcard">
+        <h2>いま生まれる赤ちゃんだったら</h2>
+        <p class="src">国連の世界人口推計などをもとにした概算 · 世界の年間出生数 約1億3,000万人</p>
+        <div class="bars" id="birthBars"></div>
+        <p style="margin:14px 0 0"><a class="btn btn-sm" href="c/index.html">172か国の統計をすべて見る</a></p>
+      </div>
+      <div class="floatborn" style="position:static;text-align:right;margin-top:16px"><button class="btn btn-primary btn-big" data-born>生まれる</button></div>
+      <div class="how-strip how-strip-desktop" aria-label="あそびかた"><b>あそびかた</b><span><i class="how-icon how-born" aria-hidden="true"></i>生まれる</span><span class="how-arrow" aria-hidden="true">→</span><span><i class="how-icon how-focus" aria-hidden="true"></i>毎年の重点と決断</span><span class="how-arrow" aria-hidden="true">→</span><span><i class="how-icon how-record" aria-hidden="true"></i>一生をふりかえる</span></div>
+    </div>
+  </div>
+
+  <section class="block edu-hide">
+    <h2>みんなの一生</h2>
+    <p class="sub">見本です。ここに並ぶ一生とひとことは、このサイトが自動でつくった例で、実在の人の投稿ではありません。</p>
+    <div class="shares" id="shares"></div>
+    <div class="actions"><button class="btn" data-open="shares">すべて見る</button></div>
+  </section>
+
+  <div class="settings">
+    <div>
+      <div class="edu-hide">
+      <div class="lab">生まれる時代</div>
+      <div class="seg" data-setting="era">
+        <button data-v="past">むかしの世界</button><button data-v="now">いまの世界</button><button data-v="future">これからの世界</button><button data-v="any">どれでも</button>
+      </div>
+      <p class="help" id="eraHelp"></p>
+      </div>
+      <div class="lab" style="margin-top:22px">あなたが実際に生まれた国（任意）</div>
+      <select id="realCountry" aria-label="あなたが実際に生まれた国"></select>
+      <p class="help">選んでおくと、くじで生まれた一生とあなたの国を並べて見られます。この端末にだけ保存します。</p>
+      <div id="classCodeBox" hidden>
+        <label class="lab" for="classCode">クラスコード（任意）</label>
+        <input id="classCode" type="text" inputmode="numeric" pattern="[0-9]{4}" maxlength="4" autocomplete="off" placeholder="4けたの数字">
+        <p class="help">同じ日に同じ4けたを使うと、同じ赤ちゃんから始められます。入力はこの端末だけで使い、送信しません。</p>
+      </div>
+    </div>
+    <div>
+      <div class="lab">生まれる国の決め方</div>
+      <div class="seg" data-setting="method">
+        <button data-v="births">いま生まれている赤ちゃん</button><button data-v="pop">いま生きている人</button>
+      </div>
+      <p class="help">赤ちゃんで選ぶと、国ごとの年間出生数の割合でくじを引きます。人で選ぶと、人口の割合で引きます。どちらでも、一生は0歳から始まります。</p>
+    </div>
+    <div>
+      <div class="lab">一生の長さ</div>
+      <div class="seg" data-setting="length">
+        <button data-v="15">約15分</button><button data-v="30">約30分</button><button data-v="60">約1時間</button>
+      </div>
+      <p class="help">その国の平均寿命まで生きたときにかかる時間です。30分なら、1年が20〜30秒ほどで過ぎます。途中で一時停止や早送りもできます。</p>
+    </div>
+  </div>
+
+  <div class="go">
+    <button class="btn btn-primary btn-big" data-born>生まれる</button>
+    <button class="btn" id="resumeBtn" hidden>続きから</button>
+    <span class="small">設定はそのままでも始められます。</span>
+    <button class="btn" data-music aria-pressed="false">♪ おだやかな音</button>
+    <button class="btn" id="openLab">授業用の実験室</button>
+  </div>
+  <p class="lab-link" id="normalLabLink" hidden><button class="btn btn-sm btn-ghost" id="openLabNormal">たくさんの一生を一度に見る</button></p>
+  <div class="notes">
+    <p>病気、事故、貧しさ、別れといった重い出来事も、統計どおりの頻度で起こります。<button class="btn btn-sm btn-ghost" id="gentleBtn" aria-pressed="false">つらい場面を減らす</button></p>
+    <p><b id="ageNote">15歳以上</b> · 記録はこのブラウザにだけ残り、どこにも送りません。</p>
+  </div>
+
+  <section class="block edu-hide">
+    <h2>見本の一生</h2>
+    <p class="sub">終わりまで送られた一生を、このサイトがいくつか用意しました。カードを押すと、その一生の記録を開きます。</p>
+    <div class="carousel">
+      <button class="arrow l" aria-label="前へ" data-scroll="-1">‹</button>
+      <div class="track" id="memTrack"></div>
+      <button class="arrow r" aria-label="次へ" data-scroll="1">›</button>
+    </div>
+    <div class="actions">
+      <button class="btn" data-open="memorials">見本を一覧で見る</button>
+      <button class="btn edu-hide" data-open="random">ランダムに一生と出会う</button>
+      <button class="btn" data-open="past">前世の記録</button>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="people">
+      <div>
+        <h2 style="font-size:19px;margin-bottom:12px">このページの中で生まれた1万人</h2>
+        <p class="small">このページを開いたときに、設定と同じくじで1万人を生まれさせ、それぞれの寿命を引いてみた結果です。</p>
+        <div class="counts" id="simCounts"></div>
+        <p class="small" style="margin-top:14px">ひとりひとりはくじで決まりますが、数が集まると実際の統計に近づいていきます。平均寿命が実際より少し短く出るのは、健康の値が低い人ほど死亡率を高めにしているためです。</p>
+      </div>
+      <div>
+        <table class="ptable"><thead><tr><th>多く生まれた国</th><th>生まれた割合</th><th>平均寿命</th></tr></thead><tbody id="simTable"></tbody></table>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="explain">
+      <div><h3>同じ瞬間に生まれた人たち</h3><p>あなたが生まれたのと同じ1秒に、地球のほかの場所でも4人ほどが生まれています。その人たちの一生も同じ統計にしたがって進み、ときどき近況が届きます。</p></div>
+      <div><h3>ひと休み</h3><p>5歳、15歳、30歳、50歳、70歳で時間が止まり、ひとつの問いが出ます。あなた自身の同じ年ごろを思い出すための時間です。答えを書いておくと、記録に残ります。</p></div>
+      <div><h3>どこまでが実際の数字？</h3><p>出生の割合、平均寿命、5歳までの死亡、所得、就学、都市化は、国ごとの公開統計の概算です。出来事の起こりやすさや性格のしくみは、このサイトが作った近似です。</p></div>
+    </div>
+    <div class="longnote">
+      <p>決断の場面では、自分で選ぶことも「おまかせ」にすることもできます。毎年の重点は、6歳からいつでも変えられます。選んだ道は確率を少し動かすだけで、生まれた場所の影響から完全に自由になることはありません。</p>
+      <p class="edu-hide">「むかしの世界」は1950〜2025年から生まれる年を選び、その年の統計を使います。「これからの世界」は2026年に生まれ、国連の将来推計に沿って一生を進めます。</p>
+    </div>
+  </section>
+
+  <div class="footbox">
+    <div class="small">これは学習用の見本サイトです。記録はこの端末の中に残り、送信されません。</div>
+    <div class="row">
+      <button class="btn btn-sm edu-hide" data-open="feedback">ご意見</button>
+      <button class="btn btn-sm" data-open="changelog">更新履歴</button>
+      <button class="btn btn-sm" data-open="transfer">記録を移す</button>
+      <button class="btn btn-sm" data-open="past">前世の記録</button>
+      <button class="btn btn-sm" data-open="homescreen">ホーム画面に追加</button>
+    </div>
+  </div>
+  <p class="footlinks">Your World, Your Life · <a href="about/index.html">このサイトについて</a> · <a href="c/index.html">172か国の統計</a> · <a href="help/index.html">記録についての質問</a> · <a href="privacy/index.html">プライバシーポリシー</a> · <a href="terms/index.html">ご利用について</a> · <a href="notice/index.html">特定商取引法に基づく表記</a></p>
+  <p class="small" style="padding-bottom:40px">数字は国連・世界銀行・WHO などの公開統計をもとにした概算です。死因の内訳には WHO Global Health Estimates（2000・2019・2023年）を用いています。</p>
+  <p class="small edu-hide">授業で使う先生へ：重い場面をやわらげ、時代を「いまの世界」に固定した授業用モードがあります。 <a href="index.html?edu=1">授業用モードで開く</a></p>
+</div>
+
+<!-- ========== 一度に見る実験室 ========== -->
+<div id="lab" class="lab-view" hidden>
+  <p><a id="labBack" href="index.html">← 最初の画面へ</a></p>
+  <h1>授業用の実験室</h1>
+  <p>同じくじで何人かの一生を進め、結果のばらつきを見てみましょう。一人ずつの記録も開けます。</p>
+  <div class="lab-controls">
+    <label for="labCount">生まれる人数</label>
+    <select id="labCount"><option value="20">20人</option><option value="50">50人</option><option value="100">100人</option></select>
+    <button class="btn btn-primary" id="labRun">生まれさせる</button>
+    <span class="small" id="labProgress" role="status"></span>
+  </div>
+  <div id="labResults" hidden>
+    <div class="lab-tiles" id="labTiles"></div>
+    <p id="labCompare" class="small"></p>
+    <section class="panel"><h2>生まれた国</h2><div id="labCountries" class="lab-countries"></div></section>
+    <section class="panel"><h2>一人ずつの記録</h2><p class="small">見出しを押すと並び替えられます。行を押すと記録が開きます。</p><div class="table-scroll"><table class="lab-table"><thead><tr><th><button data-lab-sort="name">名前</button></th><th><button data-lab-sort="country">国</button></th><th><button data-lab-sort="sex">性別</button></th><th><button data-lab-sort="age">享年</button></th><th><button data-lab-sort="edu">学歴</button></th><th><button data-lab-sort="job">最後の仕事</button></th><th><button data-lab-sort="cause">死因</button></th></tr></thead><tbody id="labRows"></tbody></table></div></section>
+  </div>
+</div>
+
+<!-- ========== 出生届 ========== -->
+<div id="cert" hidden></div>
+<!-- ========== 一生の画面 ========== -->
+<div id="life" hidden></div>
+<!-- ========== 死亡記録 ========== -->
+<div id="dead" class="dead" hidden></div>
+</main>
+
+<div id="ending" class="ending" role="dialog" aria-label="一生のふりかえり"></div>
+<div id="modal" class="scrim" role="dialog" aria-modal="true"><div class="dialog"><div class="dh"><span class="t" id="mTitle"></span><button id="mClose">閉じる</button></div><div class="db" id="mBody"></div></div></div>
+<div id="decPeek" class="decpeek"><span>決断が待っています</span><button id="decOpen">もう一度開く</button></div>
+<div id="toast" class="toast" role="status"></div>
+<button class="totop" id="toTop" aria-label="ページの先頭へ">↑</button>
+
+<script src="assets/data.js?v=9f0c4a1d91"></script>
+<script src="assets/i18n.js?v=9f0c4a1d91"></script>
+<script src="assets/engine_i18n.js?v=9f0c4a1d91"></script>
+<script src="assets/money.js?v=9f0c4a1d91"></script>
+<script src="assets/engine.js?v=9f0c4a1d91"></script>
+<script src="assets/loader.js?v=9f0c4a1d91"></script>
+<script src="assets/samples.js?v=9f0c4a1d91"></script>
+<script src="assets/landdots.js?v=9f0c4a1d91"></script>
+<script src="assets/pixel.js?v=9f0c4a1d91"></script>
+<script src="assets/share.js?v=9f0c4a1d91"></script>
+<script src="assets/common.js?v=9f0c4a1d91"></script>
+<script src="assets/app_i18n.js?v=9f0c4a1d91"></script>
+<script src="assets/app.js?v=9f0c4a1d91"></script>
+</body>
+</html>
