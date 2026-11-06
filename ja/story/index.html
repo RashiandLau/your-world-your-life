@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>このサイトの作り方 · Your World, Your Life</title>
+<meta name="description" content="Your World, Your Lifeの作り方。公開資料を物語に生かす方法と、結果の確かめ方を紹介します。">
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="../../assets/style.css?v=8d172c9888">
+<script src="../../assets/theme.js?v=8d172c9888"></script>
+</head>
+<body>
+<header class="site-head">
+  <a class="logo" href="../../index.html">Your World, Your <b>Life</b></a>
+  <nav class="langs" aria-label="言語"><a href="../../en/story/index.html">English</a><span title="準備中">한국어</span><span class="on" aria-current="true">日本語</span><span title="準備中">繁體中文</span><span title="準備中">简体中文</span><span title="準備中">Tiếng Việt</span><span title="準備中">Français</span><span title="準備中">ไทย</span><span title="準備中">Español</span><span title="準備中">Deutsch</span></nav>
+  <a class="btn btn-primary" href="../../index.html">生まれる</a>
+</header>
+<style>
+  .story-reader { max-width: 680px; }
+  .story-intro { color: var(--ink); line-height: 1.7; }
+  .story-chapter { min-height: 15rem; line-height: 1.9; }
+  .story-chapter h2 { margin-top: 1.5rem; }
+  .story-controls { display: flex; flex-wrap: wrap; align-items: center; gap: .6rem; margin: 1.25rem 0; }
+  .story-controls button, .story-controls select { min-height: 42px; }
+  #story-nav { position: sticky; top: 0; z-index: 2; background: var(--paper); padding: .4rem 0; border-bottom: 1px solid var(--rule); }
+  .story-progress { min-width: 5em; text-align: center; }
+  .story-status { color: var(--ink3); min-height: 1.5em; }
+  @media (max-width: 480px) { .story-controls .btn { flex: 1 1 auto; } }
+</style>
+<main class="page story-reader">
+  <p class="kicker">制作ノート · 無料の読みもの</p>
+  <h1>このサイトの作り方</h1>
+  <div class="story-intro" id="story-intro"><p>一生をたどったあとで、その裏側が気になった方へ。初めての方も、ここから読めます。</p></div>
+  <p class="story-intro" id="story-returning" hidden>前にたどった人生を覚えていますか。別の人生なら何が変わるか、何は自分で変えられないか。そんなことも考えながら読んでみてください。</p>
+  <div class="story-controls" id="story-nav" aria-label="このサイトの作り方">
+    <button class="btn" id="story-prev" type="button">前へ</button>
+    <span class="story-progress" id="story-progress" aria-live="polite"></span>
+    <button class="btn" id="story-next" type="button">次へ</button>
+  </div>
+  <div class="story-controls">
+    <label for="story-speed">読み上げ速度</label>
+    <select id="story-speed"><option value="0.8">0.8×</option><option value="1">1×</option><option value="1.25">1.25×</option><option value="1.5">1.5×</option></select>
+    <button class="btn" id="story-speak" type="button" disabled>読み上げる</button>
+    <button class="btn" id="story-stop" type="button" disabled>止める</button>
+    <button class="btn" id="story-share" type="button">リンクを共有</button>
+  </div>
+  <p class="story-status" id="story-status" role="status" aria-live="polite"></p>
+  <section class="story-chapter" id="chapter-1" aria-labelledby="chapter-title-1"><h2 id="chapter-title-1">なぜ一人の人生なのか</h2><p>国の平均だけでは、そこで暮らす一人ひとりの時間は見えません。このサイトでは、生まれる場所と家庭をくじで決め、学校、仕事、人との関わり、老いをたどります。選ぶ場面もありますが、結果をすべて決められるわけではありません。</p><p>遊び終えたときに、同じ条件でも違う人生があると感じてもらえたら。記録に出てくる短い場面は、そのことを考えるきっかけです。</p></section><section class="story-chapter" id="chapter-2" aria-labelledby="chapter-title-2" hidden><h2 id="chapter-title-2">資料から、物語の土台へ</h2><p>出生数や年齢別の死亡率、就学年数などは、公開資料から国と年を確かめて使います。数字がないところは、条件が近い国などを参考に見積もり、画面に「推計」と示します。別の年の数字を、その人が生きた年の事実としては扱いません。</p><p>平均寿命は、一人が必ず生きる年数ではありません。5歳未満で亡くなる子どもの割合も、すべての子が同じ危険にさらされるという意味ではありません。資料にある数字と、人生を進めるために作った確率は分けて確かめています。</p></section><section class="story-chapter" id="chapter-3" aria-labelledby="chapter-title-3" hidden><h2 id="chapter-title-3">選択と記憶をつなぐ</h2><p>出来事をただ並べても、一人の一生には見えません。前の決断が後の暮らしにどう響くか、家族がどこに住み、何を知っているかを記録します。小さな思い出が何年も後に現れることもあります。</p><p>つらい場面を大げさに見せず、文章と文字の色で雰囲気を伝えます。その年の大切な選択や出来事を見つけやすいよう、表示する記録の数も抑えています。</p></section><section class="story-chapter" id="chapter-4" aria-labelledby="chapter-title-4" hidden><h2 id="chapter-title-4">確かめながら直す</h2><p>同じ条件で人生を再現し、学校や仕事の年齢、家計の計算に矛盾がないか調べます。たくさんの人生を試し、寿命や子どもの死亡、借金、学び、願いのかなう割合も確かめます。珍しい出来事ばかりが目立たないかも見ます。</p><p>この読みものも、ここでたどる人生も、世界のすべてを写したものではありません。資料で分かることと、見積もったことを示しながら直していきます。記録は自分の端末に残り、外に共有するかどうかも自分で決められます。</p></section>
+</main>
+<script type="application/json" id="story-copy">{"progress": "章", "no_voice": "この端末で日本語の音声が見つかりません。文章はそのまま読めます。", "ready": "読み上げを使えます。", "speaking": "読み上げ中", "stopped": "読み上げを止めました。", "finished": "読み上げが終わりました。", "copied": "章へのリンクをコピーしました。", "share_unavailable": "共有できませんでした。ブラウザのアドレスをコピーしてください。"}</script>
+<script src="../../ja/story/reader.js?v=adbb8a8001"></script>
+<footer class="site-foot">
+  <nav><a href="../../index.html">Your World, Your Life</a> · <a href="../../about/index.html">このサイトについて</a> · <a href="../../ja/edu/index.html">先生向けガイド</a> · <a href="../../c/index.html">172か国の統計</a> · <a href="../../api/index.html">手元で試す</a> · <a href="../../help/index.html">記録についての質問</a> · <a href="../../privacy/index.html">プライバシーポリシー</a> · <a href="../../terms/index.html">ご利用について</a></nav>
+  <p>数字は世界銀行の World Development Indicators（電気・水・教育・仕事など、CC BY 4.0）をもとにしています。予防接種率には WDI に載る WHO・UNICEF の推計（DTP3・麻疹、CC BY 4.0）を使います。世界幸福度報告の数字は Our World in Data 経由です（CC BY 4.0）。欠けている値の一部は、WHO GHO の喫煙率・HIV・交通死亡率・殺人死亡率と、Our World in Data 経由の UNDP の期待教育年数、UNAIDS の HIV 有病率で補っています。WHO の殺人死亡率は死亡統計にもとづく推計です。なお欠ける値は、地域と所得水準が近い国の中央値などで補い、「推定」と示しました。死因の内訳には WHO Global Health Estimates（2000・2019・2023年）を使います。国別ページの紛争による死亡は UCDP（Our World in Data 経由）、難民数は UNHCR の統計によります。暮らしや行政・政治の指標には世界銀行の Gender Statistics、ASPIRE、Worldwide Governance Indicators（WGI、CC BY 4.0）も使います。金融と職業の指標には世界銀行 Global Findex（CC BY 4.0）と ILOSTAT（CC BY 4.0）も使います。この学習用サイトでは数字を丸めています。</p>
+</footer>
+<button class="totop" id="toTop" aria-label="ページの先頭へ">↑</button>
+<script src="../../assets/common.js?v=8d172c9888"></script>
+</body>
+</html>

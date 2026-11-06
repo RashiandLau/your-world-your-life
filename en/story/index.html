@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>How this site is made · Your World, Your Life</title>
+<meta name="description" content="A free making-of reading about the sources, design choices and checks behind Your World, Your Life.">
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="../../assets/style.css?v=8d172c9888">
+<script src="../../assets/theme.js?v=8d172c9888"></script>
+</head>
+<body>
+<header class="site-head">
+  <a class="logo" href="../../en/index.html">Your World, Your <b>Life</b></a>
+  <nav class="langs" aria-label="Language"><span class="on" aria-current="true">English</span><span title="coming soon">Korean</span><a href="../../ja/story/index.html">Japanese</a><span title="coming soon">Traditional Chinese</span><span title="coming soon">Simplified Chinese</span><span title="coming soon">Vietnamese</span><span title="coming soon">French</span><span title="coming soon">Thai</span><span title="coming soon">Spanish</span><span title="coming soon">German</span></nav>
+  <a class="btn btn-primary" href="../../en/index.html">Begin a life</a>
+</header>
+<style>
+  .story-reader { max-width: 680px; }
+  .story-intro { color: var(--ink); line-height: 1.7; }
+  .story-chapter { min-height: 15rem; line-height: 1.9; }
+  .story-chapter h2 { margin-top: 1.5rem; }
+  .story-controls { display: flex; flex-wrap: wrap; align-items: center; gap: .6rem; margin: 1.25rem 0; }
+  .story-controls button, .story-controls select { min-height: 42px; }
+  #story-nav { position: sticky; top: 0; z-index: 2; background: var(--paper); padding: .4rem 0; border-bottom: 1px solid var(--rule); }
+  .story-progress { min-width: 5em; text-align: center; }
+  .story-status { color: var(--ink3); min-height: 1.5em; }
+  @media (max-width: 480px) { .story-controls .btn { flex: 1 1 auto; } }
+</style>
+<main class="page story-reader">
+  <p class="kicker">Making-of notes · Free reading</p>
+  <h1>How this site is made</h1>
+  <div class="story-intro" id="story-intro"><p>After following a life, you may wonder about the work behind the scenes. You can also start here before playing.</p></div>
+  <p class="story-intro" id="story-returning" hidden>If you are returning, think of a life you followed before. As you read, consider what might change in another life and what might remain beyond anyone&#x27;s control.</p>
+  <div class="story-controls" id="story-nav" aria-label="How this site is made">
+    <button class="btn" id="story-prev" type="button">Previous</button>
+    <span class="story-progress" id="story-progress" aria-live="polite"></span>
+    <button class="btn" id="story-next" type="button">Next</button>
+  </div>
+  <div class="story-controls">
+    <label for="story-speed">Speech speed</label>
+    <select id="story-speed"><option value="0.8">0.8×</option><option value="1">1×</option><option value="1.25">1.25×</option><option value="1.5">1.5×</option></select>
+    <button class="btn" id="story-speak" type="button" disabled>Read aloud</button>
+    <button class="btn" id="story-stop" type="button" disabled>Stop</button>
+    <button class="btn" id="story-share" type="button">Share link</button>
+  </div>
+  <p class="story-status" id="story-status" role="status" aria-live="polite"></p>
+  <section class="story-chapter" id="chapter-1" aria-labelledby="chapter-title-1"><h2 id="chapter-title-1">Why follow one life?</h2><p>A national average cannot show how one person&#x27;s time feels. Here, a draw selects a birthplace and household. A life then moves through school, work, relationships and later years. You make choices, but you cannot choose every outcome.</p><p>The aim is to leave room for more than one story within the same conditions. Brief scenes in the record are an invitation to ask what a number can describe, and what it cannot.</p></section><section class="story-chapter" id="chapter-2" aria-labelledby="chapter-title-2" hidden><h2 id="chapter-title-2">From sources to a story</h2><p>We read public figures on births, death by age and expected schooling, then match them to place and year. When observations are missing, we estimate from comparable conditions and label the result. An observation from another year is not treated as a fact about this person&#x27;s year.</p><p>Life expectancy is not a promised lifespan. Under-five mortality does not mean every child faces identical risks. We check the source figures separately from the probabilities created to move a simulated life forward.</p></section><section class="story-chapter" id="chapter-3" aria-labelledby="chapter-title-3" hidden><h2 id="chapter-title-3">Connecting choices and memories</h2><p>A pile of unrelated events does not feel like one life. We keep track of how an earlier decision affects later days, where family members live and what they know. A small memory can return years later.</p><p>We avoid spectacle around hardship. Words and text colour carry the tone. We also limit the lines shown in a year so a meaningful choice or event stays easy to find without more controls or screens.</p></section><section class="story-chapter" id="chapter-4" aria-labelledby="chapter-title-4" hidden><h2 id="chapter-title-4">Checking and revising</h2><p>Fixed seeds let us replay lives and look for impossible school or work paths and household balances that do not add up. Larger samples reveal shifts in lifespan, early childhood mortality, debt, schooling and how often wishes are fulfilled.</p><p>Neither this reading nor the simulation is a complete portrait of the world. We keep revising it while showing where sources end and approximations begin. Your records stay on your device, and you decide whether to share anything outside it.</p></section>
+</main>
+<script type="application/json" id="story-copy">{"progress": "Part", "no_voice": "No English device voice is available. You can still read the text.", "ready": "A device voice is available.", "speaking": "Reading aloud", "stopped": "Reading stopped.", "finished": "Reading finished.", "copied": "Link to this part copied.", "share_unavailable": "Sharing is unavailable. Copy the browser address instead."}</script>
+<script src="../../ja/story/reader.js?v=adbb8a8001"></script>
+<footer class="site-foot">
+  <nav><a href="../../en/index.html">Your World, Your Life</a> · <a href="../../en/about/index.html">About</a> · <a href="../../en/edu/index.html">For educators</a> · <a href="../../en/c/index.html">172 countries</a> · <a href="../../en/api/index.html">Try it locally</a> · <a href="../../en/help/index.html">Help</a> · <a href="../../en/privacy/index.html">Privacy</a> · <a href="../../en/terms/index.html">Terms</a> · <a href="../../en/notice/index.html">Legal notice</a></nav>
+  <p>Figures draw on the World Bank's World Development Indicators (CC BY 4.0), including WHO/UNICEF DTP3 and measles immunization estimates, the World Happiness Report via Our World in Data (CC BY 4.0), WHO Global Health Estimates and GHO indicators, UNDP expected schooling via Our World in Data, UNAIDS HIV prevalence via Our World in Data, UCDP conflict data via Our World in Data, and UNHCR refugee data. New life-course and governance measures also use World Bank Gender Statistics, ASPIRE, and Worldwide Governance Indicators (WGI, CC BY 4.0). Financial and occupational measures also use World Bank Global Findex and ILOSTAT (both CC BY 4.0). Some homicide rates use WHO mortality estimates. Missing values are estimated from comparable countries and marked as estimates. Figures are rounded for this educational site.</p>
+</footer>
+<button class="totop" id="toTop" aria-label="Back to top">↑</button>
+<script src="../../assets/i18n.js?v=8d172c9888"></script>
+<script src="../../assets/common.js?v=8d172c9888"></script>
+</body>
+</html>
