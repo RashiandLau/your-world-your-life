@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Your World, Your Life · Simulasi kehidupan</title>
+<meta name="description" content="Simulasi kehidupan gratis berdasarkan data publik. Mulailah sebagai salah satu bayi yang lahir hari ini, lalu ikuti kisahnya hingga akhir.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="id_ID">
+<meta property="og:site_name" content="Your World, Your Life">
+<meta property="og:title" content="Your World, Your Life | Di mana kisahmu dimulai?">
+<meta property="og:description" content="Tempat lahir ditentukan secara acak. Ikuti satu kehidupan hingga akhir dengan bantuan data publik.">
+<meta property="og:url" content="https://rashiandlau.github.io/your-world-your-life/id/">
+<meta property="og:image" content="https://rashiandlau.github.io/your-world-your-life/assets/og-en.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Gambar langit malam dan pegunungan dengan tulisan Your World, Your Life.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Your World, Your Life | Di mana kisahmu dimulai?">
+<meta name="twitter:description" content="Tempat lahir ditentukan secara acak. Ikuti satu kehidupan hingga akhir dengan bantuan data publik.">
+<meta name="twitter:image" content="https://rashiandlau.github.io/your-world-your-life/assets/og-en.png">
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="../assets/style.css?v=d292feac96">
+<script src="../assets/theme.js?v=d292feac96"></script>
+</head>
+<body>
+<main id="app">
+
+
+<div id="home" class="home">
+  <div class="topbar">
+    <div class="langpill" aria-label="Bahasa">
+      <span class="globe" aria-hidden="true">◍</span>
+      <a href="../en/index.html">Inggris</a><span class="on" aria-current="true">Bahasa Indonesia</span><a href="../index.html">Jepang</a>
+      <button class="theme" data-theme-toggle aria-label="Ganti tema tampilan">◑</button>
+    </div>
+  </div>
+
+  <div class="hero">
+    <div>
+      <h1 class="title">Your World,<br>Your <b>Life</b></h1>
+      <p class="intro">Di Your World, Your Life, kamu mengikuti satu kehidupan yang baru dimulai di dunia hingga selesai. Sekitar empat bayi lahir setiap detik. Negara dan keluarga tempatmu lahir ditentukan oleh keadaan, seperti dalam hidupmu sendiri.</p>
+      <div class="edu-notice" id="eduNotice" hidden>
+        <b>Mode kelas</b>
+        <p>Mode ini memakai dunia masa kini. Pilihan tentang alkohol, tembakau, judi, dan kejahatan serta gambaran kekerasan yang gamblang dihilangkan. Kemiskinan, penyakit, kematian anak, perkawinan anak, dan konflik tetap bisa muncul jika berkaitan dengan data. Masukan dan hasilmu tidak dikirim ke mana pun.</p>
+        <button class="btn btn-sm" data-open="teacher">Untuk guru</button>
+        <a href="index.html">Tampilan biasa</a>
+      </div>
+      <div class="counters">
+        <div><div class="n" id="cBorn">0</div><div class="t">Bayi yang lahir sejak halaman ini dibuka</div></div>
+        <div><div class="n" id="cDied">0</div><div class="t">Orang yang meninggal dalam waktu yang sama</div></div>
+      </div>
+      <div class="theme-badge"><span class="b">Tema hari ini</span><b id="themeName"></b><span id="themeDesc"></span></div>
+      <div class="live"><span class="dot" aria-hidden="true"></span><div><div>Saat ini, sekitar 8,1 miliar orang menjalani kehidupan masing-masing di Bumi.</div><div class="just" id="justBorn">Baru saja · Seseorang lahir</div></div></div>
+      <div class="mobile-born"><button class="btn btn-primary btn-big" data-born disabled>Mulai satu kehidupan</button></div>
+      <div class="how-strip how-strip-mobile" aria-label="Cara bermain"><b>Cara bermain</b><span><i class="how-icon how-born" aria-hidden="true"></i>Mulai satu kehidupan</span><span class="how-arrow" aria-hidden="true">→</span><span><i class="how-icon how-focus" aria-hidden="true"></i>Fokus tahunan dan keputusan</span><span class="how-arrow" aria-hidden="true">→</span><span><i class="how-icon how-record" aria-hidden="true"></i>Renungkan satu kehidupan</span></div>
+      <div class="mini-mem edu-hide">
+        <div class="labelrow"><span>Contoh kehidupan buatan situs ini</span><button class="btn btn-sm btn-ghost" data-open="memorials">Lihat semua</button></div>
+        <div class="row" id="miniMem"></div>
+      </div>
+    </div>
+    <div>
+      <div class="mapbox" id="heroMap"></div>
+      <div class="birthcard">
+        <h2>Jika kamu lahir saat ini</h2>
+        <p class="src">Perkiraan berdasarkan proyeksi penduduk PBB · Sekitar 130 juta kelahiran per tahun di seluruh dunia</p>
+        <div class="bars" id="birthBars"></div>
+        <p style="margin:14px 0 0"><a class="btn btn-sm" href="c/index.html">Lihat statistik 172 negara</a></p>
+      </div>
+      <div class="floatborn" style="position:static;text-align:right;margin-top:16px"><button class="btn btn-primary btn-big" data-born disabled>Mulai satu kehidupan</button></div>
+      <div class="how-strip how-strip-desktop" aria-label="Cara bermain"><b>Cara bermain</b><span><i class="how-icon how-born" aria-hidden="true"></i>Mulai satu kehidupan</span><span class="how-arrow" aria-hidden="true">→</span><span><i class="how-icon how-focus" aria-hidden="true"></i>Fokus tahunan dan keputusan</span><span class="how-arrow" aria-hidden="true">→</span><span><i class="how-icon how-record" aria-hidden="true"></i>Renungkan satu kehidupan</span></div>
+    </div>
+  </div>
+
+  <section class="block edu-hide">
+    <h2>Kehidupan di berbagai tempat</h2>
+    <p class="sub">Kehidupan dan renungan ini adalah contoh buatan situs, bukan unggahan orang sungguhan.</p>
+    <div class="shares" id="shares"></div>
+    <div class="actions"><button class="btn" data-open="shares">Lihat semua</button></div>
+  </section>
+
+  <div class="settings">
+    <div>
+      <div class="edu-hide">
+      <div class="lab">Masa kelahiran</div>
+      <div class="seg" data-setting="era">
+        <button data-v="past">Masa lalu</button><button data-v="now">Masa kini</button><button data-v="future">Masa depan</button><button data-v="any">Masa apa saja</button>
+      </div>
+      <p class="help" id="eraHelp"></p>
+      </div>
+      <div class="lab" style="margin-top:22px">Negara tempatmu lahir (boleh dikosongkan)</div>
+      <select id="realCountry" aria-label="Negara tempatmu lahir"></select>
+      <p class="help">Pilih negaramu untuk membandingkannya dengan negara tempat tokoh lahir. Pilihan ini hanya tersimpan di perangkatmu.</p>
+      <div id="classCodeBox" hidden>
+        <label class="lab" for="classCode">Kode kelas (boleh dikosongkan)</label>
+        <input id="classCode" type="text" inputmode="numeric" pattern="[0-9]{4}" maxlength="4" autocomplete="off" placeholder="Empat angka">
+        <p class="help">Gunakan kode empat angka yang sama pada hari yang sama untuk memulai dari bayi yang sama. Kode hanya tersimpan di perangkat ini.</p>
+      </div>
+    </div>
+    <div>
+      <div class="lab">Cara menentukan tempat lahir</div>
+      <div class="seg" data-setting="method">
+        <button data-v="births">Bayi yang lahir sekarang</button><button data-v="pop">Penduduk saat ini</button>
+      </div>
+      <p class="help">Pilihan pertama memakai jumlah kelahiran tahunan tiap negara. Pilihan kedua memakai jumlah penduduk. Keduanya memulai kehidupan pada usia nol.</p>
+    </div>
+    <div>
+      <div class="lab">Lama permainan</div>
+      <div class="seg" data-setting="length">
+        <button data-v="15">Sekitar 15 menit</button><button data-v="30">Sekitar 30 menit</button><button data-v="60">Sekitar satu jam</button>
+      </div>
+      <p class="help">Perkiraan waktu bermain ini dihitung sampai usia harapan hidup rata-rata negara tersebut. Pada pilihan 30 menit, satu tahun berlalu dalam sekitar 20–30 detik. Waktu bisa dijeda atau dipercepat.</p>
+    </div>
+  </div>
+
+  <div class="go">
+    <button class="btn btn-primary btn-big" data-born disabled>Mulai satu kehidupan</button>
+    <span id="birthLoadStatus" role="status" aria-live="polite" aria-atomic="true"></span>
+    <script>document.getElementById("birthLoadStatus").textContent = "Memuat halaman awal…";</script>
+    <button class="btn" id="resumeBtn" hidden>Lanjutkan</button>
+    <span class="small">Kamu bisa langsung mulai dengan pengaturan awal.</span>
+    <button class="btn" data-music aria-pressed="false">♪ Musik tenang</button>
+    <button class="btn" id="openLab">Percobaan untuk kelas</button>
+  </div>
+  <p class="lab-link" id="normalLabLink" hidden><button class="btn btn-sm btn-ghost" id="openLabNormal">Jalankan banyak kehidupan sekaligus</button></p>
+  <div class="notes">
+    <p>Peristiwa berat seperti sakit, kecelakaan, kemiskinan, dan kehilangan bisa terjadi menurut peluang yang didasarkan pada data.<button class="btn btn-sm btn-ghost" id="gentleBtn" aria-pressed="false">Kurangi adegan yang berat</button></p>
+    <p><b id="ageNote">Usia 15 tahun ke atas</b> · Catatan tetap di peramban ini dan tidak dikirim ke mana pun.</p>
+  </div>
+
+  <section class="block edu-hide">
+    <h2>Contoh kehidupan</h2>
+    <p class="sub">Situs ini menyiapkan beberapa contoh kehidupan yang sudah selesai. Pilih kartu untuk membuka catatannya.</p>
+    <div class="carousel">
+      <button class="arrow l" aria-label="Sebelumnya" data-scroll="-1">‹</button>
+      <div class="track" id="memTrack"></div>
+      <button class="arrow r" aria-label="Berikutnya" data-scroll="1">›</button>
+    </div>
+    <div class="actions">
+      <button class="btn" data-open="memorials">Lihat contoh kehidupan</button>
+      <button class="btn edu-hide" data-open="random">Temui satu kehidupan acak</button>
+      <button class="btn" data-open="past">Kehidupan terdahulu</button>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="people">
+      <div>
+        <h2 style="font-size:19px;margin-bottom:12px">10.000 kehidupan dimulai di halaman ini</h2>
+        <p class="small">Saat halaman ini dibuka, situs membuat 10.000 kelahiran menurut pengaturanmu dan memperkirakan lama hidup setiap orang.</p>
+        <div class="counts" id="simCounts"></div>
+        <p class="small" style="margin-top:14px">Setiap kehidupan dihasilkan secara acak. Jika jumlahnya banyak, hasilnya cenderung mendekati data dasarnya. Rata-rata dalam simulasi bisa sedikit lebih rendah karena kondisi kesehatan yang buruk meningkatkan risiko kematian.</p>
+      </div>
+      <div>
+        <table class="ptable"><thead><tr><th>Tempat lahir yang paling sering muncul</th><th>Pangsa kelahiran</th><th>Rata-rata lama hidup</th></tr></thead><tbody id="simTable"></tbody></table>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="explain">
+      <div><h3>Lahir pada saat yang sama</h3><p>Saat kehidupanmu dimulai, sekitar empat bayi lain juga lahir di seluruh dunia. Kehidupan mereka mengikuti data yang sama. Sesekali kamu akan mendengar kabar tentang mereka.</p></div>
+      <div><h3>Saatnya berhenti sejenak</h3><p>Waktu berhenti pada usia 5, 15, 30, 50, dan 70 tahun untuk sebuah pertanyaan. Kamu boleh mengingat masa itu dalam hidupmu sendiri. Tulisanmu disimpan bersama catatan.</p></div>
+      <div><h3>Angka mana yang berasal dari data?</h3><p>Pangsa kelahiran, harapan hidup, kematian anak, pendapatan, pendidikan, dan tingkat urbanisasi adalah perkiraan dari data publik per negara. Peluang kejadian dan sifat tokoh disusun sebagai model untuk situs ini.</p></div>
+    </div>
+    <div class="longnote">
+      <p>Saat harus mengambil keputusan, kamu bisa memilih sendiri atau menyerahkannya pada peluang. Sejak usia enam tahun, fokus tahunan bisa diubah kapan saja. Pilihan mengubah peluang sedikit, tetapi tempat lahir tetap memengaruhi kesempatan yang tersedia.</p>
+      <p class="edu-hide">Dalam masa lalu, tahun lahir berada antara 1950 dan 2025. Dalam masa depan, tokoh lahir pada 2026 dan menjalani gambaran sederhana berdasarkan proyeksi PBB.</p>
+    </div>
+  </section>
+
+  <div class="footbox">
+    <div class="small">Ini adalah contoh untuk belajar. Catatan tetap di perangkat ini dan tidak dikirim ke mana pun.</div>
+    <div class="row">
+      <button class="btn btn-sm edu-hide" data-open="feedback">Masukan</button>
+      <button class="btn btn-sm" data-open="changelog">Apa yang baru</button>
+        <button class="btn btn-sm edu-hide" data-open="transfer">Pindahkan catatan</button>
+        <button class="btn btn-sm edu-hide" data-open="past">Kehidupan terdahulu</button>
+        <button class="btn btn-sm edu-hide" data-open="homescreen">Tambahkan ke layar utama</button>
+    </div>
+  </div>
+  <p class="footlinks">Your World, Your Life · <a href="about/index.html">Tentang situs ini</a> · <a href="c/index.html">172 negara</a> · <a href="api/index.html">Coba di perangkatmu</a> · <a href="help/index.html">Bantuan tentang catatan</a> · <a href="privacy/index.html">Kebijakan privasi</a> · <a href="terms/index.html">Ketentuan penggunaan</a> · <a href="notice/index.html">Keterangan hukum</a></p>
+  <p class="small" style="padding-bottom:40px">Angka di sini adalah perkiraan dari data publik PBB, Bank Dunia, dan WHO. Penyebab kematian mengacu pada WHO Global Health Estimates (2000, 2019, dan 2023).</p>
+  <p class="small edu-hide">Untuk guru: mode kelas mengurangi adegan yang berat dan memakai masa kini saja. <a href="index.html?edu=1">Buka mode kelas</a></p>
+</div>
+
+
+<div id="lab" class="lab-view" hidden>
+  <p><a id="labBack" href="index.html">← Kembali ke halaman awal</a></p>
+  <h1>Percobaan untuk kelas</h1>
+  <p>Jalankan beberapa kehidupan dengan pengaturan yang sama, lalu lihat perbedaan hasilnya. Tiap catatan juga bisa dibuka.</p>
+  <div class="lab-controls">
+    <label for="labCount">Jumlah kehidupan</label>
+    <select id="labCount"><option value="20">20 orang</option><option value="50">50 orang</option><option value="100">100 orang</option></select>
+    <button class="btn btn-primary" id="labRun">Mulai</button>
+    <span class="small" id="labProgress" role="status"></span>
+  </div>
+  <div id="labResults" hidden>
+    <div class="lab-tiles" id="labTiles"></div>
+    <p id="labCompare" class="small"></p>
+    <section class="panel"><h2>Tempat lahir</h2><div id="labCountries" class="lab-countries"></div></section>
+    <section class="panel"><h2>Catatan tiap orang</h2><p class="small">Pilih judul kolom untuk mengurutkan, atau pilih baris untuk membuka catatan.</p><div class="table-scroll"><table class="lab-table"><thead><tr><th><button data-lab-sort="name">Nama</button></th><th><button data-lab-sort="country">Negara</button></th><th><button data-lab-sort="sex">Jenis kelamin</button></th><th><button data-lab-sort="age">Usia saat meninggal</button></th><th><button data-lab-sort="edu">Pendidikan</button></th><th><button data-lab-sort="job">Pekerjaan terakhir</button></th><th><button data-lab-sort="cause">Penyebab kematian</button></th></tr></thead><tbody id="labRows"></tbody></table></div></section>
+  </div>
+</div>
+
+
+<div id="cert" hidden></div>
+
+<div id="life" hidden></div>
+
+<div id="dead" class="dead" hidden></div>
+</main>
+
+<div id="ending" class="ending" role="dialog" aria-label="Kilas balik kehidupan"></div>
+<div id="modal" class="scrim" role="dialog" aria-modal="true"><div class="dialog"><div class="dh"><span class="t" id="mTitle"></span><button id="mClose">Tutup</button></div><div class="db" id="mBody"></div></div></div>
+<div id="decPeek" class="decpeek"><span>Ada keputusan yang menunggu</span><button id="decOpen">Buka lagi</button></div>
+<div id="toast" class="toast" role="status"></div>
+<button class="totop" id="toTop" aria-label="Kembali ke atas">↑</button>
+
+<script src="../assets/data.js?v=d292feac96"></script>
+<script src="../assets/i18n.js?v=d292feac96"></script>
+<script src="../assets/locales/id.js?v=d292feac96"></script>
+<script src="../assets/locales/id-pilot.js?v=d292feac96"></script>
+<script src="../assets/locales/id-culture.js?v=d292feac96"></script>
+<script src="../assets/engine_i18n.js?v=d292feac96"></script>
+<script src="../assets/locales/id-engine.js?v=d292feac96"></script>
+<script src="../assets/locales/id-extra.js?v=d292feac96"></script>
+<script src="../assets/money.js?v=d292feac96"></script>
+<script src="../assets/engine.js?v=d292feac96"></script>
+<script src="../assets/loader.js?v=d292feac96"></script>
+<script src="../assets/samples.js?v=d292feac96"></script>
+<script src="../assets/landdots.js?v=d292feac96"></script>
+<script src="../assets/pixel.js?v=d292feac96"></script>
+<script src="../assets/share.js?v=d292feac96"></script>
+<script src="../assets/common.js?v=d292feac96"></script>
+<script src="../assets/app_i18n.js?v=d292feac96"></script>
+<script src="../assets/locales/id-app.js?v=d292feac96"></script>
+<script src="../assets/stats.js?v=d292feac96"></script>
+<script src="../assets/reflection.js?v=d292feac96"></script>
+<script src="../assets/app.js?v=d292feac96"></script>
+</body>
+</html>

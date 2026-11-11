@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Try a life locally</title>
+<meta name="description" content="Try the life engine here and learn to run the local Node package and MCP server.">
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="../../assets/style.css?v=d292feac96">
+<script src="../../assets/theme.js?v=d292feac96"></script>
+</head>
+<body>
+<header class="site-head">
+  <a class="logo" href="../../en/index.html">Your World, Your <b>Life</b></a>
+  <nav class="langs" aria-label="Language"><span class="on" aria-current="true">English</span><a href="../../id/api/index.html">Bahasa Indonesia</a><a href="../../api/index.html">Japanese</a></nav>
+  <a class="btn btn-primary" href="../../en/index.html">Begin a life</a>
+</header>
+<main class="page prose api-demo">
+  <h1>Try a life locally</h1>
+  <p class="lead">Choose a seed and generate a whole life. The calculation runs in this page. The life is fictional, and gaps in the statistics include estimates.</p>
+  <form id="api-demo-form" class="panel api-demo-controls">
+    <label>Seed <input id="api-demo-seed" type="number" min="0" max="4294967295" step="1" value="417" required></label>
+    <label>Era <select id="api-demo-era"><option value="now">Today</option><option value="past">Past</option><option value="future">Future</option></select></label>
+    <label>Past birth year <input id="api-demo-year" type="number" min="1950" max="2025" step="1" value="1960"></label>
+    <label class="api-demo-check"><input id="api-demo-gentle" type="checkbox" checked> Soften difficult scenes</label>
+    <button id="api-demo-run" class="btn btn-primary" type="submit">Generate a life</button>
+  </form>
+  <p id="api-demo-status" role="status" aria-live="polite">Choose a seed and era.</p>
+  <section id="api-demo-output" class="panel" hidden>
+    <h2 id="api-demo-title"></h2><p id="api-demo-summary"></p><p id="api-demo-support"></p>
+    <h3>Age-stamped experiences (first 12)</h3><ol id="api-demo-events"></ol>
+    <details><summary>View result JSON</summary><pre id="api-demo-json"></pre></details>
+  </section>
+  <h2>Run it on your computer</h2><p><a class="btn" href="../../download/local-tools.zip" download>Download the local tools</a></p><p>Install Node.js 18 or later. Download the local tools and unpack them into a new folder. The archive contains both api/ and site/assets/. Move into that folder before running the examples below; adjust the folder name if needed. No extra package, account, or key is required.</p>
+  <pre><code>cd your-world-your-life</code></pre>
+  <h3>Call from Node</h3><pre><code>const core = require('./api/core');
+const one = core.simulate(417, { locale: 'en' });
+const many = core.batch(417, { count: 3, locale: 'en' });
+const family = core.lineage(2, { era: 'past', year: 1950, country: 'jpn', generations: 2, locale: 'en' });</code></pre>
+  <h3>Use the command line</h3><pre><code>node api/cli/index.js simulate --seed 417 --locale en
+node api/cli/index.js batch --seed 417 --count 3 --locale en
+node api/cli/index.js lineage --seed 2 --era past --year 1950 --country jpn --generations 2 --locale en</code></pre>
+  <h3>Connect with MCP</h3><p>In an MCP-capable app, set the command to node and the argument to the absolute path of api/mcp/index.js in the extracted folder. It uses standard input and output. The three read-only tools are simulate_life, batch_compare, and lineage.</p>
+  <p>Local use has no fee, call limit, remaining balance, or reset date. Results follow contract version 1.0.0. The same seed, options, and bundled data reproduce a result. Updating the data or engine may change a result for the same seed.</p><p class="small">See api/README.md and api/core/README.md in the extracted folder for full inputs and outputs.</p>
+  <h2>How data is handled</h2><p>This trial keeps the seed and result in page memory; it does not submit or save them. Loading the page and its data still contacts the site host. The local tools make no outbound calls. Check the settings of any application you connect through MCP to learn how it handles inputs and results.</p>
+</main>
+<script src="../../assets/data.js?v=d292feac96"></script>
+<script src="../../assets/i18n.js?v=d292feac96"></script>
+<script src="../../assets/engine_i18n.js?v=d292feac96"></script>
+<script src="../../assets/money.js?v=d292feac96"></script>
+<script src="../../assets/engine.js?v=d292feac96"></script>
+<script src="../../assets/loader.js?v=d292feac96"></script>
+<script src="../../assets/api-demo.js?v=d292feac96"></script>
+<footer class="site-foot">
+  <nav><a href="../../en/index.html">Your World, Your Life</a> · <a href="../../en/about/index.html">About</a> · <a href="../../en/edu/index.html">For educators</a> · <a href="../../en/c/index.html">172 countries</a> · <a href="../../en/api/index.html">Try it locally</a> · <a href="../../en/help/index.html">Help</a> · <a href="../../en/privacy/index.html">Privacy</a> · <a href="../../en/terms/index.html">Terms</a> · <a href="../../en/notice/index.html">Legal notice</a></nav>
+  <p>Figures draw on the World Bank's World Development Indicators (CC BY 4.0), including WHO/UNICEF DTP3 and measles immunization estimates, the World Happiness Report via Our World in Data (CC BY 4.0), WHO Global Health Estimates and GHO indicators, UNDP expected schooling via Our World in Data, UNAIDS HIV prevalence via Our World in Data, UCDP conflict data via Our World in Data, and UNHCR refugee data. New life-course and governance measures also use World Bank Gender Statistics, ASPIRE, and Worldwide Governance Indicators (WGI, CC BY 4.0). Financial and occupational measures also use World Bank Global Findex and ILOSTAT (both CC BY 4.0). Some homicide rates use WHO mortality estimates. Missing values are estimated from comparable countries and marked as estimates. Figures are rounded for this educational site.</p>
+</footer>
+<button class="totop" id="toTop" aria-label="Back to top">↑</button>
+
+<script src="../../assets/common.js?v=d292feac96"></script>
+</body>
+</html>

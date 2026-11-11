@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>手元で人生を生成</title>
+<meta name="description" content="この画面で人生を試し、手元の Node と MCP から使う方法を案内します。">
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="../assets/style.css?v=d292feac96">
+<script src="../assets/theme.js?v=d292feac96"></script>
+</head>
+<body>
+<header class="site-head">
+  <a class="logo" href="../index.html">Your World, Your <b>Life</b></a>
+  <nav class="langs" aria-label="言語"><a href="../en/api/index.html">English</a><a href="../id/api/index.html">Bahasa Indonesia</a><span class="on" aria-current="true">日本語</span></nav>
+  <a class="btn btn-primary" href="../index.html">生まれる</a>
+</header>
+<main class="page prose api-demo">
+  <h1>手元で人生を生成</h1>
+  <p class="lead">種を決めて一生を試せます。計算はこの画面の中で行います。結果は架空の人生です。統計のない部分には推定も含まれます。</p>
+  <form id="api-demo-form" class="panel api-demo-controls">
+    <label>種 <input id="api-demo-seed" type="number" min="0" max="4294967295" step="1" value="417" required></label>
+    <label>時代 <select id="api-demo-era"><option value="now">いま</option><option value="past">過去</option><option value="future">未来</option></select></label>
+    <label>過去の出生年 <input id="api-demo-year" type="number" min="1950" max="2025" step="1" value="1960"></label>
+    <label class="api-demo-check"><input id="api-demo-gentle" type="checkbox" checked> 重い場面をやわらげる</label>
+    <button id="api-demo-run" class="btn btn-primary" type="submit">人生を生成</button>
+  </form>
+  <p id="api-demo-status" role="status" aria-live="polite">種と時代を選んでください。</p>
+  <section id="api-demo-output" class="panel" hidden>
+    <h2 id="api-demo-title"></h2><p id="api-demo-summary"></p><p id="api-demo-support"></p>
+    <h3>年齢付きの出来事（先頭の12件）</h3><ol id="api-demo-events"></ol>
+    <details><summary>結果の JSON を見る</summary><pre id="api-demo-json"></pre></details>
+  </section>
+  <h2>手元で使う</h2><p><a class="btn" href="../download/local-tools.zip" download>手元用の道具をダウンロード</a></p><p>Node.js 18 以降を入れ、手元用の道具を新しいフォルダに展開してください。api/ と site/assets/ が一緒に入っています。フォルダへ移動してから、次の例を実行します。フォルダ名が違う場合は読み替えてください。追加のパッケージ、登録、鍵は要りません。</p>
+  <pre><code>cd your-world-your-life</code></pre>
+  <h3>Node から呼ぶ</h3><pre><code>const core = require('./api/core');
+const one = core.simulate(417, { locale: 'ja' });
+const many = core.batch(417, { count: 3, locale: 'ja' });
+const family = core.lineage(2, { era: 'past', year: 1950, country: 'jpn', generations: 2, locale: 'ja' });</code></pre>
+  <h3>コマンドで呼ぶ</h3><pre><code>node api/cli/index.js simulate --seed 417 --locale ja
+node api/cli/index.js batch --seed 417 --count 3 --locale ja
+node api/cli/index.js lineage --seed 2 --era past --year 1950 --country jpn --generations 2 --locale ja</code></pre>
+  <h3>MCP につなぐ</h3><p>MCP 対応アプリに、コマンドを node、引数を展開したフォルダにある api/mcp/index.js の絶対パスとして設定します。標準入出力で動きます。道具は simulate_life、batch_compare、lineage の三つで、読み取り専用です。</p>
+  <p>手元での利用に料金、回数の上限、残り回数の表示、更新日はありません。結果は契約版 1.0.0 の形式で返ります。同じ種・設定・同梱資料なら同じ結果になります。資料や生成器が更新されると、同じ種でも結果が変わることがあります。</p><p class="small">詳しい入出力は展開したフォルダ内の api/README.md と api/core/README.md をご覧ください。</p>
+  <h2>データの扱い</h2><p>入力した種と生成結果は画面内で扱い、この試用画面から送信・保存しません。ページと資料の読み込みにはサイトへの通信が必要です。手元の道具は外部へ通信しません。MCP を接続したアプリによるデータの扱いは、そのアプリの設定をご確認ください。</p>
+</main>
+<script src="../assets/data.js?v=d292feac96"></script>
+<script src="../assets/i18n.js?v=d292feac96"></script>
+<script src="../assets/engine_i18n.js?v=d292feac96"></script>
+<script src="../assets/money.js?v=d292feac96"></script>
+<script src="../assets/engine.js?v=d292feac96"></script>
+<script src="../assets/loader.js?v=d292feac96"></script>
+<script src="../assets/api-demo.js?v=d292feac96"></script>
+<footer class="site-foot">
+  <nav><a href="../index.html">Your World, Your Life</a> · <a href="../about/index.html">このサイトについて</a> · <a href="../ja/edu/index.html">先生向けガイド</a> · <a href="../c/index.html">172か国の統計</a> · <a href="../api/index.html">手元で試す</a> · <a href="../help/index.html">記録についての質問</a> · <a href="../privacy/index.html">プライバシーポリシー</a> · <a href="../terms/index.html">ご利用について</a></nav>
+  <p>数字は世界銀行の World Development Indicators（電気・水・教育・仕事など、CC BY 4.0）をもとにしています。予防接種率には WDI に載る WHO・UNICEF の推計（DTP3・麻疹、CC BY 4.0）を使います。世界幸福度報告の数字は Our World in Data 経由です（CC BY 4.0）。欠けている値の一部は、WHO GHO の喫煙率・HIV・交通死亡率・殺人死亡率と、Our World in Data 経由の UNDP の期待教育年数、UNAIDS の HIV 有病率で補っています。WHO の殺人死亡率は死亡統計にもとづく推計です。なお欠ける値は、地域と所得水準が近い国の中央値などで補い、「推定」と示しました。死因の内訳には WHO Global Health Estimates（2000・2019・2023年）を使います。国別ページの紛争による死亡は UCDP（Our World in Data 経由）、難民数は UNHCR の統計によります。暮らしや行政・政治の指標には世界銀行の Gender Statistics、ASPIRE、Worldwide Governance Indicators（WGI、CC BY 4.0）も使います。金融と職業の指標には世界銀行 Global Findex（CC BY 4.0）と ILOSTAT（CC BY 4.0）も使います。この学習用サイトでは数字を丸めています。</p>
+</footer>
+<button class="totop" id="toTop" aria-label="ページの先頭へ">↑</button>
+<script src="../assets/common.js?v=d292feac96"></script>
+</body>
+</html>
